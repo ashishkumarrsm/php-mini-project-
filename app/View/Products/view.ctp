@@ -18,13 +18,13 @@ $reviewCount = !empty($ratingData[0]['review_count']) ? (int)$ratingData[0]['rev
             <div>
                 <span>Price</span>
                 <strong>$<?php echo number_format($product['Product']['price'], 2); ?></strong>
-            </div>
+            </div> 
             <div>
                 <span>Rating</span>
                 <strong><?php echo h($avgRating); ?></strong>
             </div>
-            <div>
-                <span>Reviews</span>
+            <div>  
+                <span>Reviews </span>
                 <strong><?php echo $reviewCount; ?></strong>
             </div>
             <div>
