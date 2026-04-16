@@ -48,11 +48,11 @@ $reviewCount = !empty($ratingData[0]['review_count']) ? (int)$ratingData[0]['rev
     </div>
 </section>
 
-<?php if (!empty($product['Review'])): ?>
+<?php if (!empty($product['Review'])): ?> 
     <section class="panel review-list">
-        <div class="section-heading">
-            <h2>Customer reviews</h2>
-            <p>Feedback from shoppers who bought this product.</p>
+        <div class="section-heading"> 
+            <h2>Customer reviews</h2> 
+            <p>Feedback from shoppers who bought this product.</p> 
         </div>
 
         <?php foreach ($product['Review'] as $review): ?>
