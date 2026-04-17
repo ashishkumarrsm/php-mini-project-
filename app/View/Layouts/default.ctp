@@ -26,6 +26,7 @@ $isAdminArea = !empty($isAdminArea);
                 <nav class="main-nav">
                     <?php if ($isAdminArea): ?>
                         <?php echo $this->Html->link('Dashboard', array('controller' => 'dashboard', 'action' => 'index', 'admin' => true)); ?>
+                        <?php echo $this->Html->link('Products', array('controller' => 'products', 'action' => 'index', 'admin' => true)); ?>
                         <?php echo $this->Html->link('Shop Home', array('controller' => 'products', 'action' => 'index', 'admin' => false)); ?>
                     <?php else: ?>
                         <?php echo $this->Html->link('Shop', array('controller' => 'products', 'action' => 'index')); ?>
@@ -33,11 +34,11 @@ $isAdminArea = !empty($isAdminArea);
                     <?php endif; ?>
 
                     <?php if ($currentUser): ?>
-                        <?php echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'profile')); ?>
+                        <?php echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'profile', 'admin' => false)); ?>
                         <?php if (!empty($currentUser['role']) && $currentUser['role'] === 'admin'): ?>
                             <?php echo $this->Html->link('Admin', array('controller' => 'dashboard', 'action' => 'index', 'admin' => true)); ?>
                         <?php endif; ?>
-                        <?php echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout')); ?>
+                        <?php echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout', 'admin' => false)); ?>
                     <?php else: ?>
                         <?php if ($isAdminArea): ?>
                             <?php echo $this->Html->link('Admin Login', array('controller' => 'users', 'action' => 'login', 'admin' => true)); ?>
