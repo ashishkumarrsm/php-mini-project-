@@ -20,7 +20,7 @@
                                 'value' => (int)$item['qty'],
                                 'min' => 0
                             )); ?>
-                            <?php echo $this->Html->link('Remove', array('controller' => 'carts', 'action' => 'remove', $productId), array('class' => 'button button-secondary')); ?>
+                            <?php echo $this->Form->button('Remove', array('class' => 'button button-secondary', 'name' => 'remove_id', 'value' => $productId, 'type' => 'submit')); ?>
                         </div>
                     </article>
                 <?php endforeach; ?>
@@ -29,6 +29,7 @@
             <div class="checkout-bar">
                 <strong>Total: $<?php echo number_format($total, 2); ?></strong>
                 <div class="product-actions">
+                    <?php echo $this->Form->button('Clear cart', array('class' => 'button button-secondary', 'name' => 'clear_cart', 'value' => '1', 'type' => 'submit')); ?>
                     <?php echo $this->Form->submit('Update cart', array('class' => 'button button-secondary')); ?>
                     <?php echo $this->Html->link('Checkout', array('controller' => 'orders', 'action' => 'checkout'), array('class' => 'button button-primary')); ?>
                 </div>

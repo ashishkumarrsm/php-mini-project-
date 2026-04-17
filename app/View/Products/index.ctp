@@ -70,7 +70,7 @@
                             array('action' => 'view', $product['Product']['slug']),
                             array('class' => 'button button-primary')
                         ); ?>
-                        <?php echo $this->Html->link(
+                        <?php echo $this->Form->postLink(
                             'Add to cart',
                             array('controller' => 'carts', 'action' => 'add', $product['Product']['id']),
                             array('class' => 'button button-secondary')
