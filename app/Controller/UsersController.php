@@ -1,6 +1,8 @@
 <?php
 class UsersController extends AppController
 {
+    public $uses = array('User', 'Order');
+
     public function beforeFilter()
     {
         parent::beforeFilter();
@@ -96,12 +98,20 @@ class UsersController extends AppController
     public function profile()
     {
         $user = $this->User->findById($this->Auth->user('id'));
+        $orders = $this->Order->find('all', array(
+            'conditions' => array('Order.user_id' => $this->Auth->user('id')),
+            'contain' => array('OrderItem'),
+            'limit' => 5,
+            'order' => array('Order.created' => 'desc')
+        ));
+
+        $lifetimeSpend = 0;
+        foreach ($orders as $order) {
+            $lifetimeSpend += (float)$order['Order']['total'];
+        }
+
         $this->set(compact('user'));
+        $this->set(compact('orders', 'lifetimeSpend'));
         $this->set('title_for_layout', 'Your Profile');
     }
-
 }
-
-
-
-?>

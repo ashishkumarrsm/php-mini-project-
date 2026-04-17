@@ -34,7 +34,7 @@ $reviewCount = !empty($ratingData[0]['review_count']) ? (int)$ratingData[0]['rev
         </div>
 
         <div class="product-actions">
-            <?php echo $this->Html->link(
+            <?php echo $this->Form->postLink(
                 'Add to cart',
                 array('controller' => 'carts', 'action' => 'add', $product['Product']['id']),
                 array('class' => 'button button-primary')

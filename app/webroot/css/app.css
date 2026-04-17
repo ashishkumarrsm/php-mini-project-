@@ -522,6 +522,42 @@ input[type="submit"] {
     padding-bottom: 16px;
 }
 
+.checkout-customer-card,
+.account-order-list {
+    margin-bottom: 24px;
+}
+
+.checkout-customer-card h2,
+.account-order-card h3 {
+    margin: 0 0 6px;
+}
+
+.checkout-customer-card p,
+.account-order-card p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.account-order-list {
+    display: grid;
+    gap: 16px;
+}
+
+.account-order-card {
+    padding: 20px;
+    border: 1px solid rgba(68, 52, 34, 0.1);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.account-order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
 .admin-product-list {
     display: grid;
     gap: 16px;
@@ -666,8 +702,14 @@ input[type="submit"] {
 
     .admin-form-grid,
     .admin-product-row,
-    .admin-product-main {
+    .admin-product-main,
+    .account-order-top {
         grid-template-columns: 1fr;
+    }
+
+    .account-order-top {
+        display: grid;
+        justify-content: stretch;
     }
 
     .header-bar,
